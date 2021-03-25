@@ -1,0 +1,198 @@
+﻿@{
+    ViewData["Title"] = "Listar";
+}
+
+<!-- Content area -->
+<div class="content">
+    <div class="card card-primary">
+        <div class="card-header">
+            <label>Busqueda: </label>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <select name="conservador" id="conservador" class="form-control"></select>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <input type="text" id="inputBusquedaNombres" class="form-control" placeholder="Buscar por Nombres">
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <input type="text" id="inputBusquedaApellidos" class="form-control" placeholder="Buscar por Apellidos o Razon Social">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="form-group">
+                        <input type="button" id="btnBusqueda" onclick="Index.Buscar()" class="btn btn-primary" value="Busqueda Completa">
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="form-group">
+                        <input type="button" id="btnBusqueda2" onclick="Index.Busqueda2()" class="btn btn-primary" value="Busqueda Paralela">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card-body">
+            <br />
+
+            @*<div class="ResumenParciales">
+
+            </div>*@
+
+            <button type="button" class="btn btn-primary" onclick="Index.Resumen()">
+                Resumen Busqueda
+            </button>
+            <br />
+            <ul class="navbar-nav mr-auto" id="btnExportar">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Exportar
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a id="btnExportarXLSX" class="dropdown-item" onclick="location.href='@Url.Action("Exportar", "Home")'">Descargar en xlsx</a>
+                    </div>
+                </li>
+            </ul>
+            <div id="Resultado"></div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        //$("#inputBusquedaNombres").keyup(function (event) {
+        //    if (event.keyCode === 13) {
+        //        $("#btnBusqueda").click();
+        //    }
+        //});
+        //$("#inputBusquedaApellidos").keyup(function (event) {
+        //    if (event.keyCode === 13) {
+        //        $("#btnBusqueda").click();
+        //    }
+        //});
+
+        $.get("/Home/LeerArchivo", {archivo:"paginasTodas.json"}, function (result) {
+            $("#conservador").append('<option value="' + "" + '">' + "---Todos---" + '</option>');
+            $(result).each(function (index, row) { // indice, valor
+                $("#conservador").append('<option value="' + row.comuna + '">' + row.comuna + '</option>');
+            })
+        });
+
+        $("#btnExportar").hide();
+
+        function sleep(ms) {
+            return new Promise(resolve => setTimeout(resolve, ms));
+        }
+
+
+        var Index = {
+
+            Buscar: function () {
+                if ($("#inputBusquedaNombres").val() == "" && $("#inputBusquedaApellidos").val() == "") {
+                    alert("Debe hacer una busqueda por Nombres o Apellidos");
+                    return;
+                }
+                Layout.ShowSpinner();
+                $("#Resultado").load("/Home/IndexResultado",
+                    {
+                        busquedaNombres: $("#inputBusquedaNombres").val(),
+                        busquedaApellidos: $("#inputBusquedaApellidos").val(),
+                        conservador: $("#conservador").val()
+                    }, function () {           
+                        Layout.HideSpinner();
+                        $("#btnExportar").show();
+                        $('#myTable').DataTable({ "lengthMenu": [[50, 100, -1], [50, 100, "All"]], });
+                }, function (jqXHR, textStatus, errorThrown) {
+                      alert(errorThrown);
+                });
+            },
+            ExportarExcel: function () {    
+     
+            },
+
+            Busqueda: function (archivo) {
+                if ($("#inputBusquedaNombres").val() == "" && $("#inputBusquedaApellidos").val() == "") {
+                    alert("Debe hacer una busqueda por Nombres o Apellidos");
+                    return;
+                }
+
+                var nombres = $("#inputBusquedaNombres").val();
+                var apellidos = $("#inputBusquedaApellidos").val();
+
+                window.open('Home/Busqueda?busquedaNombres=' + nombres + '&busquedaApellidos=' + apellidos + "&archivo=" + archivo, '_blank');
+
+            },
+
+
+            Busqueda2: async function ()
+            {
+                if ($("#inputBusquedaNombres").val() == "" && $("#inputBusquedaApellidos").val() == "") {
+                    alert("Debe hacer una busqueda por Nombres o Apellidos");
+                    return;
+                }
+
+                $("#Resultado").empty();
+
+                this.LimpiarVariable();
+
+                var nombres = $("#inputBusquedaNombres").val();
+                var apellidos = $("#inputBusquedaApellidos").val();
+
+                window.open('Home/Busqueda?busquedaNombres=' + nombres + '&busquedaApellidos=' + apellidos + "&archivo=" + "paginas1.json", '_blank');
+                await sleep(2000);
+                window.open('Home/Busqueda?busquedaNombres=' + nombres + '&busquedaApellidos=' + apellidos + "&archivo=" + "paginas2.json", '_blank');
+                await sleep(2000);
+                window.open('Home/Busqueda?busquedaNombres=' + nombres + '&busquedaApellidos=' + apellidos + "&archivo=" + "paginas3.json", '_blank');
+                await sleep(2000);
+                window.open('Home/Busqueda?busquedaNombres=' + nombres + '&busquedaApellidos=' + apellidos + "&archivo=" + "paginas4.json", '_blank');
+
+                $("#Resultado").empty();
+            },
+
+            LimpiarVariable: function () {
+
+                $.get("/Home/LimpiarVariable", {}, function (result) {
+               
+                });
+
+            },
+
+            Resumen: function () {
+                //Layout.ShowSpinner();
+                $.get("/Home/Resumen", { },
+                    function (data) {
+                        $('#idModalBody').html(data).fadeIn('slow');
+                        $('#myModalResumen').modal('toggle');
+                        $('#myModalResumen').modal('show');
+                        //Layout.HideSpinner();
+                    })
+               
+            },
+
+            GetListaParcial: function () {
+
+                value = $('#value').text();
+                $.ajax({
+                    type: "POST",
+                    url: "/Home/ListasParciales",
+                    success: function (data) {
+                        if (data !== 0) {
+                            $(".ResumenParciales").text("Total Busqueda: " + data)
+                        }
+                    }
+                });
+
+            }
+        };
+
+        setInterval(Index.GetListaParcial, 3000);
+
+    </script>
+}
+
+<!-- /content area -->

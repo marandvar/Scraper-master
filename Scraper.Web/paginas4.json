@@ -1,0 +1,12 @@
+[
+  {
+    "Comuna": "VALPARAISO",
+    "Concatenar": "apellidos_nombres",
+    "Url": "http://www.cbrvalpo.cl",
+    "UrlBusqueda": "",
+    "UrlBusquedaPaginada": "http://www.cbrvalpo.cl/indice.php?arx=sig&nombre={0}&anho_inicio=&anho_fin={aniofin}&tipo=gool&libro=Propiedad&lim=0",
+    "Ajax": false,
+    "Params": {},
+    "Selector": "//div[@id='bu']/p/a"
+  }
+]

@@ -1,0 +1,48 @@
+﻿@model IEnumerable<Scraper.Web.Models.PersonaViewModel>
+
+
+
+
+<table class="table table-bordered table-striped" id="myTable">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Nombre)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Conservador)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Url)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nombre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Conservador)
+            </td>
+            <td>
+                <a href="@item.Url" title="Link de la Informacion Encontrada" target="_blank">link</a>
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+
+    <script>
+
+
+    </script>
+}
+
+<!-- /content area -->

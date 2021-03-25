@@ -1,0 +1,59 @@
+﻿@{
+    ViewData["Title"] = "Listar";
+}
+
+@model IEnumerable<Scraper.Web.Models.LogViewModel>
+
+<!-- Content area -->
+<div class="content">
+    <div class="card card-primary">
+        <div class="card-header">
+            <label>Log</label>
+
+        </div>
+        <div class="card-body">
+            <table class="table table-bordered table-striped" >
+                <thead>
+                    <tr>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Nombre)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Fecha)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Url)
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Nombre)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Fecha)
+                            </td>
+                            <td>
+                                <a href="@item.Url" title="Link de la Informacion Encontrada" target="_blank">Descargar</a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    <script>
+
+
+    </script>
+
+}
+

@@ -1,0 +1,185 @@
+[
+  {
+    "Comuna": "IQUIQUE",
+    "Concatenar": "apellidos_nombres",
+    "Url": "http://www.conservadoriquique.cl/",
+    "UrlBusqueda": "http://www.conservadoriquique.cl/respuestaindice1.php",
+    "UrlBusquedaPaginada": "",
+    "Ajax": true,
+    "Params": {
+      "nom": "{0}",
+      "buscar1": "Buscar"
+    },
+    "Selector": "//form[@id='form1']/label/table/tr/td[1]"
+  },
+  {
+    "Comuna": "ANTOFAGASTA",
+    "Concatenar": "nombres_apellidos",
+    "Url": "http://www.cbrantofagasta.cl/",
+    "UrlBusqueda": "http://www.cbrantofagasta.cl/sitionuevo2019/Formularios-2ht/indice.php?arx=sig&libro=Propiedad&nombre={0}&anho_inicio=1980&anho_fin={aniofin}&Submit2=Consultar+Indice",
+    "UrlBusquedaPaginada": "",
+    "Ajax": false,
+    "Params": {},
+    "Selector": "//table[@id='menu']/tr/td[1]"
+  },
+  {
+    "Comuna": "CALDERA",
+    "Concatenar": "nombres_apellidos",
+    "Url": "https://www.conservadorcaldera.cl/",
+    "UrlBusqueda": "https://www.conservadorcaldera.cl/tablaParticipantes.php",
+    "UrlBusquedaPaginada": "",
+    "Ajax": true,
+    "Params": {
+      "participante": "{0}"
+    },
+    "Selector": "//table[@class='tablesorter tablesorter-pager table table-hover table-striped white']/tbody/tr/td[6]"
+  },
+  {
+    "Comuna": "LA SERENA",
+    "Concatenar": "nombres_apellidos",
+    "Url": "https://cbrls.cl/",
+    "UrlBusqueda": "https://cbrls.cl/PortalCBRLS/api/indices?action=r-all-like",
+    "UrlBusquedaPaginada": "",
+    "Ajax": true,
+    "Params": {
+      "id_tipo_registro_FK": "1",
+      "titular": "{0}",
+      "tabla_ajax": "{'draw':'1','columns':[],'order':[],'start':'0','length':'100','search':{'value':'','regex':'false'}}",
+      "desde_paginacion": "false",
+      "anho": "{anio}"
+    },
+    "Selector": "//div[@class='v-data-table__wrapper']/table/tbody/tr/td[1]/div[2]",
+    "AnioAjax": "1937"
+  },
+  {
+    "Comuna": "COQUIMBO",
+    "Concatenar": "separados",
+    "Url": "http://www.conservadorcoquimbo.cl/",
+    "UrlBusqueda": "http://www.conservadorcoquimbo.cl/buscar_tra.php?pat_tra={0}&mat_tra=&nom={1}&bt1=Consultar",
+    "UrlBusquedaPaginada": "",
+    "Ajax": false,
+    "Params": {},
+    "Selector": "//table[@class='table table-condensed table-hover table-responsive']/tbody/tr/td[1]"
+  },
+  {
+    "Comuna": "COMBARBALA",
+    "Concatenar": "nombres_apellidos",
+    "Url": "http://www.conservadorcombarbala.cl/",
+    "UrlBusqueda": "",
+    "UrlBusquedaPaginada": "http://www.conservadorcombarbala.cl/indice.php?arx=sig&nombre={0}&anho_inicio=&anho_fin={aniofin}&tipo=gool&libro=Propiedad&lim=0",
+    "Ajax": false,
+    "Params": {},
+    "Selector": "//table[@id='menu']/tr/td[1]"
+  },
+  {
+    "Comuna": "LOS VILOS",
+    "Concatenar": "apellidos_nombres",
+    "Url": "http://www.cbrdelosvilos.cl/",
+    "UrlBusqueda": "",
+    "UrlBusquedaPaginada": "http://www.cbrdelosvilos.cl/indice.php?arx=sig&nombre={0}&anho_inicio=&anho_fin={aniofin}&tipo=gool&libro=Propiedad&lim=0",
+    "Ajax": false,
+    "Params": {},
+    "Selector": "//table[@id='menu']/tr/td[1]"
+  },
+
+  {
+    "Comuna": "VINA DEL MAR",
+    "Concatenar": "apellidos_nombres",
+    "Url": "http://www.cbrvina.cl",
+    "UrlBusqueda": "https://www.xn--cbrvia-0wa.cl/consulta-de-indices-de-los-registros-de-propiedad/",
+    "UrlBusquedaPaginada": "",
+    "Ajax": true,
+    "Params": {
+      "registro_r": "PP",
+      "r_social": "{0}"
+    },
+    "Selector": "//table[@id='admin']/tr[5] | //table[@id='admin']/tr[6] | //table[@id='admin']/tr[7] | //table[@id='admin']/tr[8] | //table[@id='admin']/tr[9]",
+    "AjaxTablaDinamica": true
+  },
+  {
+    "Comuna": "CONCON",
+    "Concatenar": "apellidos_nombres",
+    "Url": "http://www.conservadorconcon.cl/",
+    "UrlBusqueda": "",
+    "UrlBusquedaPaginada": "http://www.conservadorconcon.cl/indice.php?arx=sig&nombre={0}&anho_inicio=&anho_fin={aniofin}&tipo=gool&libro=Propiedad&lim=0",
+    "Ajax": false,
+    "Params": {},
+    "Selector": "//table[@class='table1']/tr/td[1]"
+  },
+  {
+    "Comuna": "VILLA ALEMANA",
+    "Concatenar": "apellidos_nombres",
+    "Url": "http://www.cbrvillaalemana.cl",
+    "UrlBusqueda": "",
+    "UrlBusquedaPaginada": "https://www.cbrvillaalemana.cl/appa/indice.php?arx=sig&nombre={0}&anho_inicio=&anho_fin={aniofin}&tipo=gool&libro=Propiedad&lim=0",
+    "Ajax": false,
+    "Params": {},
+    "Selector": "//table[@id='menu']/tr/td[1]"
+  },
+  {
+    "Comuna": "CASABLANCA",
+    "Concatenar": "apellidos_nombres",
+    "Url": "http://www.cbrcasablanca.cl",
+    "UrlBusqueda": "",
+    "UrlBusquedaPaginada": "http://www.cbrcasablanca.cl/indice.php?arx=sig&nombre={0}&anho_inicio=&anho_fin={aniofin}&tipo=gool&libro=Propiedad&lim=0",
+    "Ajax": false,
+    "Params": {},
+    "Selector": "//table[@id='menu']/tr/td[1]"
+  },
+  {
+    "Comuna": "QUILLOTA",
+    "Concatenar": "apellidos_nombres",
+    "Url": "https://cbrquillota.cl/",
+    "UrlBusqueda": "https://cbrquillota.cl/index.php?app=indices&module=search&controller=indices&do=search",
+    "UrlBusquedaPaginada": "",
+    "Ajax": true,
+    "Params": {
+      "register": "0",
+      "name": "{0}",
+      "type": "0"
+    },
+    "Selector": "//table[@class='ui table']/tbody/tr/td[1]",
+    "Json": true,
+    "AtributoJson": "message"
+  },
+  {
+    "Comuna": "QUINTERO",
+    "Concatenar": "nombres_apellidos",
+    "Url": "http://www.cbrquintero.cl",
+    "UrlBusqueda": "",
+    "UrlBusquedaPaginada": "http://www.cbrquintero.cl/indice?arx=sig&nombre={0}&anho_inicio=2007&anho_fin={aniofin}&tipo=gool&libro=Propiedad&lim=0",
+    "Ajax": false,
+    "Params": {},
+    "Selector": "//main/section/div/div/table/tbody/tr/td[1]"
+  },
+  {
+    "Comuna": "LA CALERA",
+    "Concatenar": "separados",
+    "Url": "http://www.conservadorlacalera.cl",
+    "UrlBusqueda": "http://www.conservadorlacalera.cl/psearch/index.php",
+    "UrlBusquedaPaginada": "",
+    "Ajax": true,
+    "Params": {
+      "search[nombres]": "{1}",
+      "search[apepaterno]": "{0}",
+      "page": "{pagina}"
+    },
+    "Selector": "//div[@id='toys-grid']/form/table/tbody/tr/td[1]",
+    "Selector2": "//div[@id='toys-grid']/form/table/tbody/tr/td[2]",
+    "PaginaAjax": "1",
+    "UrlBusquedaColumnasSeparadas": true,
+    "InicioPagina": 1
+  },
+  {
+    "Comuna": "LIMACHE",
+    "Concatenar": "apellidos_nombres",
+    "Url": "http://www.conservadorlimache.cl/",
+    "UrlBusqueda": "",
+    "UrlBusquedaPaginada": "http://www.conservadorlimache.cl/indice.php?arx=sig&nombre={0}&anho_inicio=&anho_fin={aniofin}&tipo=gool&libro=Propiedad&lim=0",
+    "Ajax": false,
+    "Params": {},
+    "Selector": "//table[@id='menu']/tr/td[1]"
+  }
+]
+
+

@@ -1,0 +1,68 @@
+﻿@model IEnumerable<Scraper.Web.Models.PersonaViewModel>
+@{
+    ViewData["Title"] = "Busqueda";
+}
+<!-- Content area -->
+<div class="content">
+    <div class="card card-primary">
+        <div class="card-header">
+            <label>Busqueda: </label>
+
+        </div>
+        <div class="card-body">
+
+            <ul class="navbar-nav mr-auto" id="btnExportar">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Exportar
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a id="btnExportarXLSX" class="dropdown-item" onclick="location.href='@Url.Action("Exportar", "Home")'">Descargar en xlsx</a>
+                    </div>
+                </li>
+            </ul>
+            <hr />
+            <table class="table table-bordered table-striped" id="myTable">
+                <thead>
+                    <tr>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Nombre)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Conservador)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Url)
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Nombre)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Conservador)
+                        </td>
+                        <td>
+                            <a href="@item.Url" title="Link de la Informacion Encontrada" target="_blank">link</a>
+                        </td>
+                    </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    <script>
+
+
+    </script>
+  
+}

@@ -1,0 +1,181 @@
+[
+  {
+    "Comuna": "CONSTITUCION",
+    "Concatenar": "separados",
+    "Url": "http://www.conservadorconstitucion.cl/",
+    "UrlBusqueda": "",
+    "UrlBusquedaPaginada": "",
+    "UrlBusquedaPaginada2": "http://www.conservadorconstitucion.cl/consulta.php?pag=0&nu={1}&nu2={0}&ano=&nu3=",
+    "Ajax": false,
+    "Params": {},
+    "Selector": "//span[@class='content02main']/table/tr/td[1]"
+  },
+  {
+    "Comuna": "CHANCO",
+    "Concatenar": "apellidos_nombres",
+    "Url": "http://www.conservadorchanco.cl/",
+    "UrlBusqueda": "",
+    "UrlBusquedaPaginada": "http://www.conservadorchanco.cl/indice.php?arx=sig&nombre={0}&anho_inicio=&anho_fin={aniofin}&tipo=gool&libro=Propiedad&lim=0",
+    "Ajax": false,
+    "Params": {},
+    "Selector": "//table[@id='menu']/tr/td[1]"
+  },
+  {
+    "Comuna": "PARRAL",
+    "Concatenar": "separados",
+    "Url": "http://www.cbrparral.cl/",
+    "UrlBusqueda": "https://www.cbrparral.cl/indice2.php?nom={1}&app={0}&apm=",
+    "UrlBusquedaPaginada": "",
+    "Ajax": false,
+    "Params": {},
+    "Selector": "//table[@class='table table-striped table-bordered table-condensed tablaS']/tbody/tr/td[1]"
+  },
+  {
+    "Comuna": "CHILLAN",
+    "Concatenar": "apellidos_nombres",
+    "Url": "http://www.cbrchillan.cl/",
+    "UrlBusqueda": "http://www.cbrchillan.cl/indices/index.php",
+    "UrlBusquedaPaginada": "",
+    "Ajax": true,
+    "Params": {
+      "klx": "",
+      "fojas": "",
+      "numero": "",
+      "nombre": "{0}",
+      "ano": "",
+      "tipo": "propiedad",
+      "ubicacion": "",
+      "i": "{pagina}"
+    },
+    "Selector": "//td[@id='recuadro']/table/tr[4]/td/table/tr/td[2]",
+    "PaginaAjax": "1"
+  },
+  {
+    "Comuna": "SAN CARLOS",
+    "Concatenar": "apellidos_nombres",
+    "Url": "http://www.conservadorsancarlos.cl/",
+    "UrlBusqueda": "",
+    "UrlBusquedaPaginada": "",
+    "UrlBusquedaPaginada2": "http://kgfvy7733b8wck9ktg64bc7d8.cl/busquedasancarlos.php?pagina=0&orden=propietario&criterio={0}",
+    "Ajax": false,
+    "Params": {},
+    "Selector": "//table[1]/tr/td[1]"
+  },
+  {
+    "Comuna": "CONCEPCION",
+    "Concatenar": "apellidos_nombres",
+    "Url": "http://www.cbrconcepcion.cl/",
+    "UrlBusqueda": "",
+    "UrlBusquedaPaginada": "http://www.cbrconcepcion.cl/indice.php?arx=sig&nombre={0}&anho_inicio=&anho_fin={aniofin}&tipo=gool&libro=Propiedad&lim=0",
+    "Ajax": false,
+    "Params": {},
+    "Selector": "//table[@id='menu']/tr/td[1]"
+  },
+  {
+    "Comuna": "CHIGUAYANTE",
+    "Concatenar": "apellidos_nombres",
+    "Url": "http://www.conservadorchiguayante.cl/",
+    "UrlBusqueda": "",
+    "UrlBusquedaPaginada": "http://www.conservadorchiguayante.cl/indice.php?arx=sig&nombre={0}&anho_inicio=&anho_fin={aniofin}&tipo=gool&libro=Propiedad&lim=0",
+    "Ajax": false,
+    "Params": {},
+    "Selector": "//table[@id='menu']/tr/td[1]"
+  },
+  {
+    "Comuna": "TALCAHUANO",
+    "Concatenar": "apellidos_nombres",
+    "Url": "http://www.conservadortalcahuano.cl/",
+    "UrlBusqueda": "http://www.conservadortalcahuano.cl/indicePropiedades.php",
+    "UrlBusquedaPaginada": "",
+    "Ajax": true,
+    "Params": {
+      "txtComprador": "{0}",
+      "txtVendedor": "",
+      "cmbAnyo": "0",
+      "btnFiltrar": "Buscar..",
+      "_p": "4"
+    },
+    "Selector": "//div[@id='contenido1']/article/div/table/tr/td[2]"
+  },
+  {
+    "Comuna": "CORONEL",
+    "Concatenar": "apellidos_nombres",
+    "Url": "http://www.conservadorcoronel.cl/",
+    "UrlBusqueda": "",
+    "UrlBusquedaPaginada": "http://www.conservadorcoronel.cl/indice.php?arx=sig&nombre={0}&anho_inicio=&anho_fin={aniofin}&tipo=gool&libro=Propiedad&lim=0",
+    "Ajax": false,
+    "Params": {},
+    "Selector": "//table[@id='menu']/tr/td[1]"
+  },
+  {
+    "Comuna": "LOS ANGELES",
+    "Concatenar": "apellidos_nombres",
+    "Url": "http://www.conservadordelosangeles.cl/",
+    "UrlBusqueda": "",
+    "UrlBusquedaPaginada": "http://www.conservadordelosangeles.cl/indice.php?arx=sig&nombre={0}&anho_inicio=&anho_fin={aniofin}&tipo=gool&libro=Propiedad&lim=0",
+    "Ajax": false,
+    "Params": {},
+    "Selector": "//table[@id='menu']/tr/td[1]"
+  },
+  {
+    "Comuna": "TEMUCO",
+    "Concatenar": "separados",
+    "Url": "http://www.cbrtemuco.cl/",
+    "UrlBusqueda": "https://www.cbrtemuco.cl/WebCBRT/webCBRT/buscarTituloPorApellido?formnombres={1}&formapellidoPaterno={0}&formapellidoMaterno=",
+    "UrlBusquedaPaginada": "",
+    "Ajax": false,
+    "Params": {},
+    "Selector": "//table[@class='table table-striped']/tr/td[4]"
+  },
+  {
+    "Comuna": "PUCON",
+    "Concatenar": "nombres_apellidos",
+    "Url": "http://www.cbrpucon.cl/",
+    "UrlBusqueda": "https://cbronline.cl/web/solicitudes/buscar_indice.php",
+    "UrlBusquedaPaginada": "",
+    "Ajax": true,
+    "Params": {
+      "reg": "RBP",
+      "anho": "1990",
+      "anho1": "{aniofin}",
+      "rol": "",
+      "info": "",
+      "nombre": "{0}"
+    },
+    "Selector": "//table[@class='table table-condensed table-hover table-striped table-bordered']/tr/td[3]"
+  },
+  {
+    "Comuna": "PUERTO MONTT",
+    "Concatenar": "apellidos_nombres",
+    "Url": "http://www.conservadordepuertomontt.cl/",
+    "UrlBusqueda": "",
+    "UrlBusquedaPaginada": "http://www.conservadordepuertomontt.cl/indice.php?arx=sig&nombre={0}&anho_inicio=&anho_fin={aniofin}&tipo=gool&libro=Propiedad&lim=0",
+    "Ajax": false,
+    "Params": {},
+    "Selector": "//table[@id='menu']/tr/td[1]"
+  },
+  {
+    "Comuna": "PUERTO VARAS",
+    "Concatenar": "apellidos_nombres",
+    "Url": "http://www.conservadorpvaras.cl/",
+    "UrlBusqueda": "http://www.conservadorpvaras.cl/templates/ConsultaIndiceScan.php?categoria=indicepropiedad&ApellidoRazon={0}",
+    "UrlBusquedaPaginada": "",
+    "Ajax": false,
+    "Params": {},
+    "Selector": "//div[@class='TableBody']/table/tr/th[4]",
+    "Selector2": "//div[@class='TableBody']/table/tr/th[5]",
+    "UrlBusquedaColumnasSeparadas": true
+  },
+  {
+    "Comuna": "CASTRO",
+    "Concatenar": "apellidos_nombres",
+    "Url": "http://www.cbrcastro.cl/",
+    "UrlBusqueda": "",
+    "UrlBusquedaPaginada": "http://www.conservadordecastro.cl/indice.php?arx=sig&nombre={0}&anho_inicio=&anho_fin={aniofin}&tipo=gool&libro=Propiedad&lim=0",
+    "Ajax": false,
+    "Params": {},
+    "Selector": "//table[@id='menu']/tr/td[1]"
+  }
+]
+
+

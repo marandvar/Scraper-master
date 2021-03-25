@@ -1,0 +1,41 @@
+﻿@model IEnumerable<Scraper.Web.Models.PersonaViewModelAgrupado>
+@{
+    Layout = null;
+}
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Conservador
+            </th>
+            <th>
+                Cant. Encontradas
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (Model != null)
+        {
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Nombre)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Cantidad)
+                    </td>
+                </tr>
+            }
+            <tr>
+                <td>
+                    Total
+                </td>
+                <td>
+                    @Model.Sum(a=>a.Cantidad)
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
